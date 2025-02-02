@@ -4,20 +4,28 @@ import sys
 
 CPU_CORES = 4
 
-def parse_cpu_usage(cpu_str: str) -> list:
-    numbers = [0, 0]
+def parse_cpu_usage(cpu_str: str):
+    usage = []
+    freq = []
     str_buffer = ""
     for char in cpu_str:
         if char.isdigit(): str_buffer += char
-        elif char == "@":
-            numbers[0] = int(str_buffer)
+        elif char == "%":
+            usage.append(int(str_buffer))
             str_buffer = ""
-    numbers[1] = int(str_buffer)
-    return numbers
+        elif char == "," or char == "]":
+            freq.append(int(str_buffer))
+            str_buffer = ""
+    return usage, freq
 
 # Validate arguments
 if (len(sys.argv) < 2) or (len(sys.argv) > 3):
     print("Usage: python3 read_tegrastats.py <tegrastats pretest log file name> [performance test log file name]")
+
+# Variables
+ram_pretest = 0
+cpu_pretest = [0] * CPU_CORES
+gpu_pretest = 0
 
 for file_idx in range(1, len(sys.argv), 1):
     ram_avg = 0
@@ -25,8 +33,8 @@ for file_idx in range(1, len(sys.argv), 1):
     cpu_avg = [0] * CPU_CORES
     cpu_freq = [0] * CPU_CORES
     gpu_avg = 0
-    gpu_freq = 0
-    # VDD? 
+    # gpu_freq = 0 # Not on Jetson Nano
+    # VDD stat is not available on jetson :(
 
     with open(sys.argv[file_idx], "r") as file:
         lines = file.readlines()
@@ -36,25 +44,23 @@ for file_idx in range(1, len(sys.argv), 1):
             line = line.split(" ")
             ram_idx = line.index("RAM") + 1
             cpu_idx = line.index("CPU") + 1
-            # My tegrastats output is like CPU [X%@Z, Y%@Z,...] 
-            gpu_idx = line.index("GR3D") + 1
+            # tegrastats output is like CPU [X%@Z,Y%@Z,...] 
+            gpu_idx = line.index("GR3D_FREQ") + 1
 
             # RAM
             ram_usage = line[ram_idx].split("/")
             ram_avg += int(ram_usage[0])
-            if idx == 0: ram_max = int(ram_usage[1])
+            if idx == 0: ram_max = int(ram_usage[1][:-2])
 
             # CPU
+            cpu_usage, frequencies = parse_cpu_usage(line[cpu_idx]) 
             for core_idx in range(CPU_CORES):
-                # Depends on if cpu usage is listed with spaces TT
-                cpu_usage = parse_cpu_usage(line[cpu_idx + core_idx])
-                cpu_avg[core_idx] += cpu_usage[0]
-                if idx == 0: cpu_freq[core_idx] = cpu_usage[1]
+                cpu_avg[core_idx] += cpu_usage[core_idx]
+                if idx == 0: cpu_freq[core_idx] = frequencies[core_idx]
+                
 
             # GPU
-            gpu_usage = parse_cpu_usage(line[gpu_idx])
-            gpu_avg += gpu_usage[0]
-            if idx == 0: gpu_freq = gpu_usage[1]
+            gpu_avg += int(line[gpu_idx][:-1])
 
         # Calculate averages
         ram_avg /= num_lines
@@ -63,18 +69,33 @@ for file_idx in range(1, len(sys.argv), 1):
 
     # Output
     if len(sys.argv) == 3 and file_idx == 1:
+    	# save for later
+        ram_pretest = ram_avg
+        cpu_pretest = cpu_avg
+        gpu_pretest = gpu_avg
         print("========== v PRETEST TEGRASTATS v ==========")
     elif len(sys.argv) == 3 and file_idx == 2:
         print("========== v MAIN TEST TEGRASTATS v ==========")
     else:
         print("========== AVG TEGRASTATS ==========")
     
-    print(f"Average RAM usage: {ram_avg}/{ram_max}")
-    print(f"Average CPU usage: [", endl="")
+    print(f"Average RAM usage: {ram_avg:.2f}/{ram_max}")
+    print(f"Average CPU usage: [", end="")
     for core in range(CPU_CORES):
-        print(f"{cpu_avg[core]}%/{cpu_freq[core]}", endl="")
+        print(f"{cpu_avg[core]:.2f}%/{cpu_freq[core]}", end="")
         if core == CPU_CORES - 1: # If last
             print("]")
         else:
-            print(", ", endl="")
-    print(f"Average GPU usage: {gpu_avg}%@{gpu_freq}")
+            print(", ", end="")
+    print(f"Average GPU usage: {gpu_avg:.2f}%")
+    
+    print("========== PRETEST SUBTRACTED =========")
+    print(f"Average RAM usage: {(ram_avg):.2f}/{ram_max}")
+    print(f"Average CPU usage: [", end="")
+    for core in range(CPU_CORES):
+        print(f"{cpu_avg[core]:.2f}%/{cpu_freq[core]}", end="")
+        if core == CPU_CORES - 1: # If last
+            print("]")
+        else:
+            print(", ", end="")
+    print(f"Average GPU usage: {gpu_avg:.2f}%")
