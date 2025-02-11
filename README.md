@@ -10,15 +10,18 @@ Last tested February 11th, 2025
 2. Flash the image onto your >=64GB SD card using BalenaEtcher or method of choice
 	- The image comes with pre-installed Python 3.8 and many ML libraries but we need to replace most of these
 3. Boot the Jetson Nano and clone this repository on the Jetson Nano.
-4. In terminal, run the following:
+4. Download the PyTorch and Torchvision wheels from the following links (from Qengineering)
+	- PyTorch: https://drive.google.com/uc?id=1AQQuBS9skNk1mgZXMp0FmTIwjuxc81WY
+	- Torchvision: https://drive.google.com/uc?id=1BaBhpAizP33SV_34-l3es9MOEFhhS1i2
+5. In terminal, run the following:
     ```bash
     $ cd /path/to/Auto-Nightvision-LLIE
     $ sudo chmod +x install_dependencies.sh
     $ ./install_dependencies.sh
     ```
     This will take about 4 hours and only needs user input at the very beginning and end.
-5. Download the desired dataset according to the Retinexformer README
-6. Restart the terminal and test using the commands found in the Retinexformer README. For me, the LOLv1 test set (15 images) took 3 minutes.
+6. Download the desired dataset according to the Retinexformer README
+7. Restart the terminal and test using the commands found in the Retinexformer README. For me, the LOLv1 test set (15 images) took 3 minutes.
 
 ## Steps to run Retinexformer on Jetson Nano:
 1. Download the prebuilt image from this github: https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image
