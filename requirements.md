@@ -5,9 +5,12 @@ Last tested February 10th, 2025
 ## Quickstart
 1. Download the prebuilt image from this github: https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image
 	- I downloaded the split image and re-zipped it using 7za on macOS and the command: ```7za x JetsonNanoUb_3b.img.xz.001```
-2. Run install_dependencies.sh with root permissions. This should only be done on a freshly flashed card.
-3. Download the desired dataset according to the Retinexformer README
-4. Test using the commands found in the Retinexformer README
+2. Flash the image onto your >=64GB SD card using BalenaEtcher or method of choice
+	- The image comes with pre-installed Python 3.8 and many ML libraries
+3. Boot the Jetson Nano and run ```sudo apt install gparted; gparted```, and resize the main partition to fill the entire available space.
+4. Run install_dependencies.sh with root permissions. This should only be done on a freshly flashed card. It will take about 4 hours.
+5. Download the desired dataset according to the Retinexformer README
+6. Test using the commands found in the Retinexformer README
 
 ## Steps to run Retinexformer on Jetson Nano:
 1. Download the prebuilt image from this github: https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image
@@ -15,7 +18,7 @@ Last tested February 10th, 2025
 	```7za x JetsonNanoUb_3b.img.xz.001```
 2. Flash the image onto your >=64GB SD card using BalenaEtcher or method of choice
 	- The image comes with pre-installed Python 3.8 and many ML libraries
-3. Run gparted and extend the application memory to fill your entire card.
+3. Boot the Jetson Nano and run ```sudo apt install gparted; gparted```, and resize the main partition to fill the entire available space.
 4. Install PyTorch 1.11.0 using this tutorial: https://qengineering.eu/install-pytorch-on-jetson-nano.html
 5. Install the matching torchvision wheel (0.12.0) using this tutorial: https://qengineering.eu/install-pytorch-on-jetson-nano.html
 6. Increase the swap space to 10GB using the following commands:
