@@ -1,0 +1,89 @@
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE/multi_level_tests$ ls
+tegra_pretest_L1Unstructured_10.log      tegra_test_RandomUnstructured_10.log
+tegra_pretest_L1Unstructured_50.log      tegra_test_RandomUnstructured_50.log
+tegra_pretest_L1Unstructured_90.log      tegra_test_RandomUnstructured_90.log
+tegra_pretest_RandomUnstructured_10.log  test_output_L1Unstructured_10.txt
+tegra_pretest_RandomUnstructured_50.log  test_output_L1Unstructured_50.txt
+tegra_pretest_RandomUnstructured_90.log  test_output_L1Unstructured_90.txt
+tegra_test_L1Unstructured_10.log         test_output_RandomUnstructured_10.txt
+tegra_test_L1Unstructured_50.log         test_output_RandomUnstructured_50.txt
+tegra_test_L1Unstructured_90.log         test_output_RandomUnstructured_90.txt
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE/multi_level_tests$ cat test_output_L1Unstructured_10.txt
+========== v PRETEST TEGRASTATS v ==========
+Average RAM usage: 1211.67/3956
+Average CPU usage: [5.83%/102, 4.83%/102, 1.67%/102, 1.33%/102]
+Average GPU usage: 0.00%
+========== v MAIN TEST TEGRASTATS v ==========
+Average RAM usage: 3575.31/3956
+Average CPU usage: [14.82%/1479, 13.11%/1479, 15.06%/1479, 9.63%/1479]
+Average GPU usage: 80.61%
+========== PRETEST SUBTRACTED =========
+Average RAM usage: 2363.64/3956
+Average CPU usage: [8.99%, 8.28%, 13.39%, 8.29%]
+Average GPU usage: 80.61%
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE/multi_level_tests$ cat test_output_L1Unstructured_50.txt
+========== v PRETEST TEGRASTATS v ==========
+Average RAM usage: 1209.00/3956
+Average CPU usage: [9.25%/102, 2.25%/102, 2.12%/102, 0.88%/102]
+Average GPU usage: 0.00%
+========== v MAIN TEST TEGRASTATS v ==========
+Average RAM usage: 3538.30/3956
+Average CPU usage: [16.69%/1479, 14.21%/1479, 14.74%/1479, 11.61%/1479]
+Average GPU usage: 78.15%
+========== PRETEST SUBTRACTED =========
+Average RAM usage: 2329.30/3956
+Average CPU usage: [7.44%, 11.96%, 12.61%, 10.74%]
+Average GPU usage: 78.15%
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE/multi_level_tests$ cat test_output_L1Unstructured_90.txt
+========== v PRETEST TEGRASTATS v ==========
+Average RAM usage: 1208.00/3956
+Average CPU usage: [8.25%/102, 2.50%/102, 1.00%/102, 0.25%/102]
+Average GPU usage: 0.00%
+========== v MAIN TEST TEGRASTATS v ==========
+Average RAM usage: 3583.65/3956
+Average CPU usage: [15.89%/307, 14.72%/307, 14.40%/307, 9.49%/307]
+Average GPU usage: 80.63%
+========== PRETEST SUBTRACTED =========
+Average RAM usage: 2375.65/3956
+Average CPU usage: [7.64%, 12.22%, 13.40%, 9.24%]
+Average GPU usage: 80.63%
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE/multi_level_tests$ cat test_output_RandomUnstructured_10.txt
+========== v PRETEST TEGRASTATS v ==========
+Average RAM usage: 1220.00/3956
+Average CPU usage: [3.25%/102, 6.75%/102, 2.75%/102, 0.75%/102]
+Average GPU usage: 0.00%
+========== v MAIN TEST TEGRASTATS v ==========
+Average RAM usage: 3641.88/3956
+Average CPU usage: [15.44%/307, 13.11%/307, 15.64%/307, 10.74%/307]
+Average GPU usage: 80.88%
+========== PRETEST SUBTRACTED =========
+Average RAM usage: 2421.88/3956
+Average CPU usage: [12.19%, 6.36%, 12.89%, 9.99%]
+Average GPU usage: 80.88%
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE/multi_level_tests$ cat test_output_RandomUnstructured_50.txt
+========== v PRETEST TEGRASTATS v ==========
+Average RAM usage: 1219.25/3956
+Average CPU usage: [3.00%/102, 7.50%/102, 1.50%/102, 1.75%/102]
+Average GPU usage: 0.00%
+========== v MAIN TEST TEGRASTATS v ==========
+Average RAM usage: 3573.58/3956
+Average CPU usage: [15.20%/1479, 13.12%/1479, 14.11%/1479, 10.58%/1479]
+Average GPU usage: 80.41%
+========== PRETEST SUBTRACTED =========
+Average RAM usage: 2354.33/3956
+Average CPU usage: [12.20%, 5.62%, 12.61%, 8.83%]
+Average GPU usage: 80.41%
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE/multi_level_tests$ cat test_output_RandomUnstructured_90.txt
+========== v PRETEST TEGRASTATS v ==========
+Average RAM usage: 1223.00/3956
+Average CPU usage: [4.00%/102, 0.25%/102, 6.25%/102, 1.50%/102]
+Average GPU usage: 0.00%
+========== v MAIN TEST TEGRASTATS v ==========
+Average RAM usage: 3675.46/3956
+Average CPU usage: [15.87%/204, 14.11%/204, 14.05%/204, 12.40%/204]
+Average GPU usage: 80.50%
+========== PRETEST SUBTRACTED =========
+Average RAM usage: 2452.46/3956
+Average CPU usage: [11.87%, 13.86%, 7.80%, 10.90%]
+Average GPU usage: 80.50%
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE/multi_level_tests$ 

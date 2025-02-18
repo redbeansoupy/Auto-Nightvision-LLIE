@@ -1,0 +1,151 @@
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE$ tegrastats
+RAM 1212/3956MB (lfb 63x4MB) SWAP 716/1978MB (cached 40MB) CPU [10%@102,0%@102,0%@102,0%@102] EMC_FREQ 0% GR3D_FREQ 0% PLL@33C CPU@33C PMIC@50C GPU@35C AO@39C thermal@34C
+RAM 1212/3956MB (lfb 63x4MB) SWAP 716/1978MB (cached 40MB) CPU [8%@102,3%@102,1%@102,1%@102] EMC_FREQ 0% GR3D_FREQ 0% PLL@32.5C CPU@33C PMIC@50C GPU@34.5C AO@39C thermal@33.75C
+^C
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE$ ./test_many.s
+-bash: ./test_many.s: No such file or directory
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE$ ./test_many.sh
+Running test for model: L1Unstructured_10
+Starting tegrastats pretest...
+Pretest complete for model: L1Unstructured_10
+Starting tegrastats for test run...
+ERROR: exits as an instance (pid = 15151) exists
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+^CTraceback (most recent call last):
+  File "Enhancement/test_from_dataset.py", line 100, in <module>
+    model_restoration = create_model(opt).net_g
+  File "/home/jetson/Desktop/Retinexformer/basicsr/models/__init__.py", line 38, in create_model
+    model = model_cls(opt)
+  File "/home/jetson/Desktop/Retinexformer/basicsr/models/image_restoration_model.py", line 86, in __init__
+    self.net_g = self.model_to_device(self.net_g)
+  File "/home/jetson/Desktop/Retinexformer/basicsr/models/base_model.py", line 75, in model_to_device
+    net = net.to(self.device)
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 907, in to
+    return self._apply(convert)
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 578, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 578, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 578, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 601, in _apply
+    param_applied = fn(param)
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 905, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+KeyboardInterrupt
+
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE$ tegrastats --stop
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE$ ./test_many.sh
+Running test for model: L1Unstructured_10
+Starting tegrastats pretest...
+Pretest complete for model: L1Unstructured_10
+Starting tegrastats for test run...
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+BOOM!!!
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/L1Unstructured_10.pth
+data/LOLv1/Train/input
+data/LOLv1/Train/target
+100%|█████████████████████████████████████████| 485/485 [36:03<00:00,  4.46s/it]
+PSNR: 27.003929 
+SSIM: 0.865516 
+Test run complete for model: L1Unstructured_10; now parsing tegrastats output...
+python3: can't open file 'read_tegrastats.py': [Errno 2] No such file or directory
+Results for L1Unstructured_10 saved in test_output_L1Unstructured_10.txt
+----------------------------------------------
+Running test for model: L1Unstructured_50
+Starting tegrastats pretest...
+Pretest complete for model: L1Unstructured_50
+Starting tegrastats for test run...
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+BOOM!!!
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/L1Unstructured_50.pth
+data/LOLv1/Train/input
+data/LOLv1/Train/target
+100%|█████████████████████████████████████████| 485/485 [36:08<00:00,  4.47s/it]
+PSNR: 19.875519 
+SSIM: 0.750435 
+Test run complete for model: L1Unstructured_50; now parsing tegrastats output...
+python3: can't open file 'read_tegrastats.py': [Errno 2] No such file or directory
+Results for L1Unstructured_50 saved in test_output_L1Unstructured_50.txt
+----------------------------------------------
+Running test for model: L1Unstructured_90
+Starting tegrastats pretest...
+Pretest complete for model: L1Unstructured_90
+Starting tegrastats for test run...
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+BOOM!!!
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/L1Unstructured_90.pth
+data/LOLv1/Train/input
+data/LOLv1/Train/target
+100%|█████████████████████████████████████████| 485/485 [35:54<00:00,  4.44s/it]
+PSNR: 8.741653 
+SSIM: 0.285841 
+Test run complete for model: L1Unstructured_90; now parsing tegrastats output...
+python3: can't open file 'read_tegrastats.py': [Errno 2] No such file or directory
+Results for L1Unstructured_90 saved in test_output_L1Unstructured_90.txt
+----------------------------------------------
+Running test for model: RandomUnstructured_10
+Starting tegrastats pretest...
+Pretest complete for model: RandomUnstructured_10
+Starting tegrastats for test run...
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+BOOM!!!
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/RandomUnstructured_10.pth
+data/LOLv1/Train/input
+data/LOLv1/Train/target
+100%|█████████████████████████████████████████| 485/485 [35:58<00:00,  4.45s/it]
+PSNR: 20.028525 
+SSIM: 0.756866 
+Test run complete for model: RandomUnstructured_10; now parsing tegrastats output...
+python3: can't open file 'read_tegrastats.py': [Errno 2] No such file or directory
+Results for RandomUnstructured_10 saved in test_output_RandomUnstructured_10.txt
+----------------------------------------------
+Running test for model: RandomUnstructured_50
+Starting tegrastats pretest...
+Pretest complete for model: RandomUnstructured_50
+Starting tegrastats for test run...
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+BOOM!!!
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/RandomUnstructured_50.pth
+data/LOLv1/Train/input
+data/LOLv1/Train/target
+100%|█████████████████████████████████████████| 485/485 [36:06<00:00,  4.47s/it]
+PSNR: 9.234539 
+SSIM: 0.399334 
+Test run complete for model: RandomUnstructured_50; now parsing tegrastats output...
+python3: can't open file 'read_tegrastats.py': [Errno 2] No such file or directory
+Results for RandomUnstructured_50 saved in test_output_RandomUnstructured_50.txt
+----------------------------------------------
+Running test for model: RandomUnstructured_90
+Starting tegrastats pretest...
+Pretest complete for model: RandomUnstructured_90
+Starting tegrastats for test run...
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+BOOM!!!
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/RandomUnstructured_90.pth
+data/LOLv1/Train/input
+data/LOLv1/Train/target
+100%|█████████████████████████████████████████| 485/485 [36:00<00:00,  4.46s/it]
+PSNR: 7.801750 
+SSIM: 0.192437 
+Test run complete for model: RandomUnstructured_90; now parsing tegrastats output...
+python3: can't open file 'read_tegrastats.py': [Errno 2] No such file or directory
+Results for RandomUnstructured_90 saved in test_output_RandomUnstructured_90.txt
+----------------------------------------------
+All model tests complete.
+jetson@nano:~/Desktop/Auto-Nightvision-LLIE$ 
