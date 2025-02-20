@@ -1,0 +1,12 @@
+========== v PRETEST TEGRASTATS v ==========
+Average RAM usage: 1799.38/3956
+Average CPU usage: [35.88%/1479, 38.62%/1479, 33.25%/1479, 34.12%/1479]
+Average GPU usage: 11.88%
+========== v MAIN TEST TEGRASTATS v ==========
+Average RAM usage: 3588.42/3956
+Average CPU usage: [24.54%/1479, 22.99%/1479, 22.39%/1479, 23.02%/1479]
+Average GPU usage: 55.97%
+========== PRETEST SUBTRACTED =========
+Average RAM usage: 1789.04/3956
+Average CPU usage: [-11.33%, -15.63%, -10.86%, -11.10%]
+Average GPU usage: 44.10%
