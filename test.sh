@@ -15,7 +15,7 @@ Run tegrastats while running test script from Retinexformer
 cd ~/Desktop/Retinexformer
 echo tegrastats started...
 tegrastats --start --logfile ~/Desktop/Auto-Nightvision-LLIE/tegra_test.log
-timeout 180s python3 Enhancement/test_from_dataset.py --opt Options/RetinexFormer_LOL_v1.yml --weights pretrained_weights/LOL_v1.pth --dataset LOL_v1
+python3 Enhancement/test_from_dataset.py --opt Options/RetinexFormer_LOL_v1.yml --weights pretrained_weights/LOL_v1.pth --dataset LOLv1
 tegrastats --stop
 echo test complete, parsing output
 
