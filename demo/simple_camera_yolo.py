@@ -8,6 +8,11 @@
 import cv2
 from ultralytics import YOLO
 
+import numpy as np
+import torch
+import yaml
+from yaml import Loader
+
 """ 
 gstreamer_pipeline returns a GStreamer pipeline for capturing from the CSI camera
 Flip the image by setting the flip_method (most common values: 0 and 2)
@@ -99,5 +104,9 @@ if __name__ == "__main__":
 
     # Video Capture
     video_capture = cv2.VideoCapture(gstreamer_pipeline(flip_method=0), cv2.CAP_GSTREAMER)
+
+    # BasicSR needs to be initialized *after* the video capture or else video capture will not work
+    from basicsr.models import create_model
+    from basicsr.utils.options import dict2str, parse
 
     show_camera(model_yolo, video_capture)

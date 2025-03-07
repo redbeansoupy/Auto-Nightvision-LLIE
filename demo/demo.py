@@ -27,12 +27,12 @@ Default 1920x1080 displayd in a 1/4 size window
 
 def gstreamer_pipeline(
     sensor_id=0,
-    capture_width=1920,
-    capture_height=1080,
+    capture_width=1280,
+    capture_height=720,
     display_width=960,
     display_height=540,
-    framerate=30,
-    flip_method=0,
+    framerate=2,
+    flip_method=2,
 ):
     return (
         "nvarguscamerasrc exposuretimerange='33333 33333' aelock=true sensor-id=%d ! "
@@ -40,7 +40,8 @@ def gstreamer_pipeline(
         "nvvidconv flip-method=%d ! "
         "video/x-raw, width=(int)%d, height=(int)%d, format=(string)BGRx ! "
         "videoconvert ! "
-        "video/x-raw, format=(string)BGR ! appsink "
+        "video/x-raw, format=(string)BGR ! "
+        "appsink "
         % (
             sensor_id,
             capture_width,
@@ -149,6 +150,8 @@ def show_camera(model, video_capture, model_restoration):
 
 
 if __name__ == "__main__":
+    print("waiting a bit to init camera...")
+    time.sleep(3)
     # Video Capture
     video_capture = cv2.VideoCapture(gstreamer_pipeline(flip_method=0), cv2.CAP_GSTREAMER)
 
