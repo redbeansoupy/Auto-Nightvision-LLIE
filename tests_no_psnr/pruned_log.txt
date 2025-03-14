@@ -1,0 +1,632 @@
+jetson@soup-desktop:~/Desktop/Auto-Nightvision-LLIE$ ./test_many.sh
+model directories: /home/jetson/Desktop/LLIE_models/LLIE_models/Structured /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+output directories: /home/jetson/Desktop/Auto-Nightvision-LLIE/tests_no_psnr/structured /home/jetson/Desktop/Auto-Nightvision-LLIE/tests_no_psnr/unstructured/global /home/jetson/Desktop/Auto-Nightvision-LLIE/tests_no_psnr/unstructured/local
+Testing models in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured > /home/jetson/Desktop/Auto-Nightvision-LLIE/tests_no_psnr/structured
+Running test for model: 10_n1.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/10_n1.0_dim0.pth
+100%|█████████████████████████████████████████| 485/485 [30:17<00:00,  3.75s/it]
+Test run complete for model: 10_n1.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 10_n1.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/10_n1.0_dim-1.pth
+100%|█████████████████████████████████████████| 485/485 [30:15<00:00,  3.74s/it]
+Test run complete for model: 10_n1.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 10_n1.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/10_n1.0_dim1.pth
+100%|█████████████████████████████████████████| 485/485 [30:13<00:00,  3.74s/it]
+Test run complete for model: 10_n1.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 10_n2.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/10_n2.0_dim0.pth
+100%|█████████████████████████████████████████| 485/485 [30:16<00:00,  3.75s/it]
+Test run complete for model: 10_n2.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 10_n2.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/10_n2.0_dim-1.pth
+100%|█████████████████████████████████████████| 485/485 [30:14<00:00,  3.74s/it]
+Test run complete for model: 10_n2.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 10_n2.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/10_n2.0_dim1.pth
+100%|█████████████████████████████████████████| 485/485 [30:19<00:00,  3.75s/it]
+Test run complete for model: 10_n2.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 10_ninf_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/10_ninf_dim0.pth
+100%|█████████████████████████████████████████| 485/485 [30:10<00:00,  3.73s/it]
+Test run complete for model: 10_ninf_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 10_ninf_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/10_ninf_dim-1.pth
+100%|█████████████████████████████████████████| 485/485 [30:14<00:00,  3.74s/it]
+Test run complete for model: 10_ninf_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 10_ninf_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/10_ninf_dim1.pth
+100%|█████████████████████████████████████████| 485/485 [30:17<00:00,  3.75s/it]
+Test run complete for model: 10_ninf_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 50_n1.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/50_n1.0_dim0.pth
+100%|█████████████████████████████████████████| 485/485 [30:08<00:00,  3.73s/it]
+Test run complete for model: 50_n1.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 50_n1.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/50_n1.0_dim-1.pth
+100%|█████████████████████████████████████████| 485/485 [30:06<00:00,  3.73s/it]
+Test run complete for model: 50_n1.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 50_n1.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/50_n1.0_dim1.pth
+100%|█████████████████████████████████████████| 485/485 [30:12<00:00,  3.74s/it]
+Test run complete for model: 50_n1.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 50_n2.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/50_n2.0_dim0.pth
+100%|█████████████████████████████████████████| 485/485 [30:05<00:00,  3.72s/it]
+Test run complete for model: 50_n2.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 50_n2.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/50_n2.0_dim-1.pth
+100%|█████████████████████████████████████████| 485/485 [30:07<00:00,  3.73s/it]
+Test run complete for model: 50_n2.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 50_n2.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/50_n2.0_dim1.pth
+100%|█████████████████████████████████████████| 485/485 [30:07<00:00,  3.73s/it]
+Test run complete for model: 50_n2.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 50_ninf_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/50_ninf_dim0.pth
+100%|█████████████████████████████████████████| 485/485 [30:02<00:00,  3.72s/it]
+Test run complete for model: 50_ninf_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 50_ninf_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/50_ninf_dim-1.pth
+100%|█████████████████████████████████████████| 485/485 [30:04<00:00,  3.72s/it]
+Test run complete for model: 50_ninf_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 50_ninf_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/50_ninf_dim1.pth
+100%|█████████████████████████████████████████| 485/485 [30:11<00:00,  3.74s/it]
+Test run complete for model: 50_ninf_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 90_n1.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/90_n1.0_dim0.pth
+100%|█████████████████████████████████████████| 485/485 [30:08<00:00,  3.73s/it]
+Test run complete for model: 90_n1.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 90_n1.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/90_n1.0_dim-1.pth
+100%|█████████████████████████████████████████| 485/485 [30:24<00:00,  3.76s/it]
+Test run complete for model: 90_n1.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 90_n1.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/90_n1.0_dim1.pth
+100%|█████████████████████████████████████████| 485/485 [30:19<00:00,  3.75s/it]
+Test run complete for model: 90_n1.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 90_n2.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/90_n2.0_dim0.pth
+100%|█████████████████████████████████████████| 485/485 [30:06<00:00,  3.72s/it]
+Test run complete for model: 90_n2.0_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 90_n2.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/90_n2.0_dim-1.pth
+100%|█████████████████████████████████████████| 485/485 [30:24<00:00,  3.76s/it]
+Test run complete for model: 90_n2.0_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 90_n2.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/90_n2.0_dim1.pth
+100%|█████████████████████████████████████████| 485/485 [30:09<00:00,  3.73s/it]
+Test run complete for model: 90_n2.0_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 90_ninf_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/90_ninf_dim0.pth
+100%|█████████████████████████████████████████| 485/485 [30:09<00:00,  3.73s/it]
+Test run complete for model: 90_ninf_dim0 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 90_ninf_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/90_ninf_dim-1.pth
+100%|█████████████████████████████████████████| 485/485 [30:17<00:00,  3.75s/it]
+Test run complete for model: 90_ninf_dim-1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Running test for model: 90_ninf_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Structured/90_ninf_dim1.pth
+100%|█████████████████████████████████████████| 485/485 [30:24<00:00,  3.76s/it]
+Test run complete for model: 90_ninf_dim1 in /home/jetson/Desktop/LLIE_models/LLIE_models/Structured
+Testing models in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global > /home/jetson/Desktop/Auto-Nightvision-LLIE/tests_no_psnr/unstructured/global
+Running test for model: L1Unstructured_10 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/L1Unstructured_10.pth
+100%|█████████████████████████████████████████| 485/485 [30:14<00:00,  3.74s/it]
+Test run complete for model: L1Unstructured_10 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Running test for model: L1Unstructured_50 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/L1Unstructured_50.pth
+100%|█████████████████████████████████████████| 485/485 [30:16<00:00,  3.75s/it]
+Test run complete for model: L1Unstructured_50 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Running test for model: L1Unstructured_90 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/L1Unstructured_90.pth
+100%|█████████████████████████████████████████| 485/485 [30:26<00:00,  3.77s/it]
+Test run complete for model: L1Unstructured_90 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Running test for model: RandomUnstructured_10 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/RandomUnstructured_10.pth
+100%|█████████████████████████████████████████| 485/485 [30:16<00:00,  3.74s/it]
+Test run complete for model: RandomUnstructured_10 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Running test for model: RandomUnstructured_50 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/RandomUnstructured_50.pth
+100%|█████████████████████████████████████████| 485/485 [30:19<00:00,  3.75s/it]
+Test run complete for model: RandomUnstructured_50 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Running test for model: RandomUnstructured_90 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global/RandomUnstructured_90.pth
+100%|█████████████████████████████████████████| 485/485 [30:19<00:00,  3.75s/it]
+Test run complete for model: RandomUnstructured_90 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Global
+Testing models in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local > /home/jetson/Desktop/Auto-Nightvision-LLIE/tests_no_psnr/unstructured/local
+Running test for model: L1Unstructured_10 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local/L1Unstructured_10.pth
+100%|█████████████████████████████████████████| 485/485 [30:19<00:00,  3.75s/it]
+Test run complete for model: L1Unstructured_10 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+Running test for model: L1Unstructured_50 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local/L1Unstructured_50.pth
+100%|█████████████████████████████████████████| 485/485 [30:15<00:00,  3.74s/it]
+Test run complete for model: L1Unstructured_50 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+Running test for model: L1Unstructured_90 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local/L1Unstructured_90.pth
+100%|█████████████████████████████████████████| 485/485 [30:16<00:00,  3.75s/it]
+Test run complete for model: L1Unstructured_90 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+Running test for model: RandomUnstructured_10 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local/RandomUnstructured_10.pth
+100%|█████████████████████████████████████████| 485/485 [30:17<00:00,  3.75s/it]
+Test run complete for model: RandomUnstructured_10 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+Running test for model: RandomUnstructured_50 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local/RandomUnstructured_50.pth
+100%|█████████████████████████████████████████| 485/485 [30:18<00:00,  3.75s/it]
+Test run complete for model: RandomUnstructured_50 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+Running test for model: RandomUnstructured_90 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+Starting tegrastats for test run...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local/RandomUnstructured_90.pth
+100%|█████████████████████████████████████████| 485/485 [30:27<00:00,  3.77s/it]
+Test run complete for model: RandomUnstructured_90 in /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local
+All model tests complete.
+
