@@ -47,6 +47,31 @@ def gstreamer_pipeline(
         )
     )
 
+def detect_blue(frame):
+    # adapted from https://www.geeksforgeeks.org/multiple-color-detection-in-real-time-using-python-opencv/
+    hsvFrame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) 
+    blurred_frame = cv2.blur(hsvFrame, (7, 7)) # eliminate a little bit of color noise
+
+    # Set range for blue color and define mask 
+    blue_lower = np.array([94, 80, 2], np.uint8) 
+    blue_upper = np.array([120, 255, 255], np.uint8) 
+    blue_mask = cv2.inRange(hsvFrame, blue_lower, blue_upper) 
+
+    kernel = np.ones((3, 3), "uint8") #dilation kernel
+
+    blue_mask = cv2.dilate(blue_mask, kernel) 
+
+    contours, hierarchy = cv2.findContours(blue_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) 
+
+    return contours
+    
+def show_blue_contours(contours):
+    for _, contour in enumerate(contours): 
+        area = cv2.contourArea(contour) 
+        if(area > 1000): 
+            x, y, w, h = cv2.boundingRect(contour) 
+            frame = cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2) 
+            cv2.putText(frame, "Blue Colour", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 0, 0)) 
 
 def show_camera(model, video_capture):
     window_title_cam = "CSI Camera"
@@ -68,14 +93,17 @@ def show_camera(model, video_capture):
                 for result in results:
                     for box in result.boxes:
                         frame = cv2.rectangle(frame, (int(box.xyxy[0][0]), int(box.xyxy[0][1])),
-                          (int(box.xyxy[0][2]), int(box.xyxy[0][3])), (255, 0, 0), 3)
+                          (int(box.xyxy[0][2]), int(box.xyxy[0][3])), (0, 0, 255), 3)
                         frame = cv2.putText(frame, f"{result.names[int(box.cls[0])]}",
                           (int(box.xyxy[0][0]), int(box.xyxy[0][1]) - 10),
                            cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 255), 3)
+                           
                 # Check to see if the user closed the window
                 # Under GTK+ (Jetson Default), WND_PROP_VISIBLE does not work correctly. Under Qt it does
                 # GTK - Substitute WND_PROP_AUTOSIZE to detect if window has been closed by user
                 
+                frame = detect_blue(frame)
+
                 if cv2.getWindowProperty(window_title_cam, cv2.WND_PROP_AUTOSIZE) >= 0:
                     cv2.imshow(window_title_cam, original_frame)
                 else:
