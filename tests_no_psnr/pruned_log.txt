@@ -649,3 +649,26 @@ Not using Automatic Mixed Precision
 100%|█████████████████████████████████████████| 485/485 [30:17<00:00,  3.75s/it]
 test complete, parsing output
 
+
+*** Try random unstructured 90 again ****
+jetson@soup-desktop:~/Desktop/Auto-Nightvision-LLIE$ ./test.sh
+tegrastats started...
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:500: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/jetson/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+export CUDA_VISIBLE_DEVICES=0
+dataset LOLv1
+Not using Automatic Mixed Precision
+===>Testing using weights:  /home/jetson/Desktop/LLIE_models/LLIE_models/Unstructured/Local/RandomUnstructured_90.pth
+100%|█████████████████████████████████████████| 485/485 [30:22<00:00,  3.76s/it]
+test complete, parsing output
+Traceback (most recent call last):
+  File "../read_tegrastats.py", line 69, in <module>
+    ram_avg /= num_lines
+ZeroDivisionError: division by zero
+
