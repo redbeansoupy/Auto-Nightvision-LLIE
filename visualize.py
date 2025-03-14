@@ -113,7 +113,7 @@ def plot_unpruned_on_pruned():
         plt.scatter(times[i], ar, color="blue", alpha=1./num_files, s=2)
     plt.scatter(time_, ram_, color="magenta", label="unpruned", alpha=0.5, s=2)
     plt.title(f"RAM usage: all")
-    plt.xlabel("Sample #")
+    plt.xlabel("Time (min)")
     plt.ylabel('RAM usage (MB)')
     plt.legend()
     plt.show()
@@ -123,7 +123,7 @@ def plot_unpruned_on_pruned():
         plt.scatter(times[i], ar, color="green", alpha=1./num_files, s=2)
     plt.scatter(time_, gpu_, color="magenta", label="unpruned", alpha=0.5, s=2)
     plt.title(f"GPU usage: all")
-    plt.xlabel("Sample #")
+    plt.xlabel("Time (min)")
     plt.ylabel("GPU usage (% of available resources)")
     plt.legend()
     plt.show()
@@ -157,4 +157,4 @@ def get_data(path):
     time_end = num_lines - start
     return ram[start:], gpu[start:], time[:time_end]
 
-plot_pruned_all()
+plot_unpruned_on_pruned()
