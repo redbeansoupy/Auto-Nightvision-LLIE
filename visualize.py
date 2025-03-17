@@ -1,3 +1,6 @@
+# Various plotting styles for visualizing tegrastats output
+# Please run from the base folder of the repository (Auto-Nightvision-LLIE)
+
 import matplotlib.pyplot as plt
 import os
 
@@ -50,7 +53,7 @@ def plot_pruned_all():
         plt.scatter(times[i], ar, color="green", alpha=1./num_files, s=2)
     plt.title(f"GPU usage: all pruned")
     plt.xlabel("Time (min)")
-    plt.ylabel("GPU usage (%% of available resources)")
+    plt.ylabel("GPU usage (% of available resources)")
     plt.show()
     
 def plot_pruned_singles():
@@ -80,7 +83,7 @@ def plot_pruned_singles():
 def plot_unpruned():
     logs_root = os.path.join(os.getcwd(), "tests_no_psnr")
     path = os.path.join(logs_root, "tegra_test_unpruned.log")
-    ram, gpu, time = get_data(path)
+    ram, gpu, swap, time = get_data(path)
 
     plt.figure(figsize=(8,6))
     plt.scatter(time, ram, color="blue", s=2)
@@ -90,10 +93,17 @@ def plot_unpruned():
     plt.show()
 
     plt.figure(figsize=(8,6))
+    plt.scatter(time, swap, color="red", s=2)
+    plt.title(f"SWAP usage: {os.path.basename(path)}")
+    plt.xlabel("Time (min)")
+    plt.ylabel("SWAP usage (MB)")
+    plt.show()
+
+    plt.figure(figsize=(8,6))
     plt.scatter(time, gpu, color="green", s=2)
     plt.title(f"GPU usage: {os.path.basename(path)}")
     plt.xlabel("Time (min)")
-    plt.ylabel("GPU usage (%% of available resources)")
+    plt.ylabel("GPU usage (% of available resources)")
     plt.show()
 
 def plot_unpruned_on_pruned():
@@ -219,7 +229,7 @@ def plot_swap_special():
     for i, ar in enumerate(swaps):
         plt.scatter(times[i], ar, color=colors[i], label=labels[i], alpha=1./num_files, s=2)
     plt.scatter(time_, swap_, color="magenta", label="unpruned", alpha=0.5, s=2)
-    plt.title(f"SWAP usage: all pruned")
+    plt.title(f"SWAP usage: all")
     plt.xlabel('Time (min)')
     plt.ylabel('SWAP usage (MB)')
     legend = plt.legend()
