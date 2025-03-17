@@ -2,15 +2,16 @@
 # Generated using ChatGPT with minor tweaks
 # This script runs test_from_dataset.py using each .pth model file found in the specified directory.
 # For each model, it:
-#   1. Runs a 5-second tegrastats pretest and saves the log.
-#   2. Runs tegrastats concurrently with the test run (using the current .pth file as weights).
-#   3. Stops tegrastats and parses both log files using read_tegrastats.py.
-#   4. Labels the output files based on the model's filename.
+#   1. Runs tegrastats concurrently with the test run (using the current .pth file as weights).
+#   2. Stops tegrastats and parses both log files using read_tegrastats.py.
+#   3. Labels the output files based on the model's filename.
+# Optionally, the pretest section can be uncommented to subtract the OS resource usage from the inference resource usage
 
 # Directories (adjust these if necessary)
 MODEL_DIRS=(~/Desktop/LLIE_models/LLIE_models/Structured ~/Desktop/LLIE_models/LLIE_models/Unstructured/Global ~/Desktop/LLIE_models/LLIE_models/Unstructured/Local)
 OUTPUT_DIRS=(~/Desktop/Auto-Nightvision-LLIE/tests_no_psnr/structured ~/Desktop/Auto-Nightvision-LLIE/tests_no_psnr/unstructured/global ~/Desktop/Auto-Nightvision-LLIE/tests_no_psnr/unstructured/local)
 TEST_SCRIPT_DIR=~/Desktop/Retinexformer
+SCRIPT_LOCATION=~/Desktop/Auto-Nightvision-LLIE
 
 echo "model directories: ${MODEL_DIRS[0]} ${MODEL_DIRS[1]} ${MODEL_DIRS[2]}"
 echo "output directories: ${OUTPUT_DIRS[0]} ${OUTPUT_DIRS[1]} ${OUTPUT_DIRS[2]}"
@@ -30,6 +31,7 @@ for i in ${!MODEL_DIRS[@]}; do
         echo "Running test for model: $MODEL_NAME in $MODEL_DIR"
 
         # Create log files
+        # touch "$OUTPUT_DIR/tegra_pretest_$MODEL_NAME.log"
         touch "$OUTPUT_DIR/tegra_test_$MODEL_NAME.log"
         touch "output_$MODEL_NAME.txt"
 
@@ -52,7 +54,8 @@ for i in ${!MODEL_DIRS[@]}; do
         tegrastats --stop
         
         cd "$OUTPUT_DIR"
-	python3 ~/Desktop/Auto-Nightvision-LLIE/read_tegrastats.py tegra_test_$MODEL_NAME.log > output_$MODEL_NAME.txt
+        # python3 ~/Desktop/Auto-Nightvision-LLIE/read_tegrastats.py tegra_pretest_$MODEL_NAME.log tegra_test_$MODEL_NAME.log > output_$MODEL_NAME.txt
+	    python3 $SCRIPT_LOCATION/read_tegrastats.py tegra_test_$MODEL_NAME.log > output_$MODEL_NAME.txt
         echo "Test run complete for model: $MODEL_NAME in $MODEL_DIR"
     done
 done
