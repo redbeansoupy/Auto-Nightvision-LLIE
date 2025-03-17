@@ -1,8 +1,5 @@
 ========== AVG TEGRASTATS ==========
-Average RAM usage: 3434.10/3956
-Average CPU usage: [12.27%/102, 10.16%/102, 11.80%/102, 8.18%/204]
-Average GPU usage: 94.17%
-========== PRETEST SUBTRACTED =========
-Average RAM usage: 3434.10/3956
-Average CPU usage: [12.27%, 10.16%, 11.80%, 8.18%]
-Average GPU usage: 94.17%
+Average RAM usage: 3434.03/0MB
+Average Swap usage: 1059.94MB
+Average CPU usage: [12.27%/0, 10.24%/0, 12.00%/0, 8.51%/0]
+Average GPU usage: 94.51%

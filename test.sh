@@ -1,6 +1,5 @@
 #!/bin/bash
-# This runs a test script with tegrastats in the background
-# I haven't made this usable for arbitrary script yet but I could do it if necessary
+# This runs a test script for a single model with tegrastats in the background
 
 # Needed in general but I set this permanently on the Jetson
 # export OPENBLAS_CORETYPE=ARMV8

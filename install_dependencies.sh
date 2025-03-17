@@ -1,4 +1,7 @@
 #!/bin/bash
+# This script installs dependencies for RetinexFormer on the Jetson Nano for you!
+# Please see the README of this repository for the full instructions. 
+# This cannot be run on the original Jetson image provided by NVIDIA but will check for prerequisites nonetheless.
 
 # function
 prompt_yn() {
@@ -90,7 +93,8 @@ else
 fi
 
 # Install OpenCV
-# This entire script is ripped from the Qengineering installation tutorial, but removed the package that is not available for Ubuntu 20.04 (v4l2ucp) and added swap space increase
+# This is a tweaked version of the Qengineering OpenCV installation tutorial
+# We removed the package that is not available for Ubuntu 20.04 (v4l2ucp) and added swap space increase
 
 set -e
 install_opencv () {
@@ -274,21 +278,6 @@ cd ~
 cv_version=$(python3 -c "import cv2; print(cv2.__version__)" 2>/dev/null)
 if [[ "$cv_version" = "4.12.0-dev" ]]; then
     printf "Correct version of OpenCV already installed. Skipping installation\n"
-# Skipping check for existing opencv build since we already checked the version
-#elif [ -d ~/opencv/build ]; then
-  #echo " "
-  #echo "You have a directory ~/opencv/build on your disk."
-  #echo "Continuing the installation will replace this folder."
-  #echo " "
-  
-  #printf "Do you wish to continue (Y/n)?"
-  #read answer
-
-  #if [ "$answer" != "${answer#[Nn]}" ] ;then 
-      #echo "Leaving without installing OpenCV"
-  #else
-      #install_opencv
-  #fi
 else
     install_opencv
 fi
