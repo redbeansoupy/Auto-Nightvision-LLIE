@@ -10,6 +10,11 @@ import os
 import argparse
 from tqdm import tqdm
 import cv2
+from ultralytics import YOLO
+model_yolo = YOLO("yolo11n.pt")
+
+
+
 
 import torch.nn as nn
 import torch
@@ -103,7 +108,12 @@ model_restoration = create_model(opt).net_g
 checkpoint = torch.load(weights)
 
 try:
-    model_restoration.load_state_dict(checkpoint['params'])
+    #model_restoration.load_state_dict(checkpoint['params'])
+    if 'params' in checkpoint:
+        model_restoration.load_state_dict(checkpoint['params'])
+    else:
+        model_restoration.load_state_dict(checkpoint)
+
 except:
     new_checkpoint = {}
     for k in checkpoint['params']:
@@ -152,6 +162,8 @@ if dataset in ['SID', 'SMID', 'SDSD_indoor', 'SDSD_outdoor']:
     print(f'test dataset length: {len(dataset)}')
     dataloader = DataLoader(dataset=dataset, batch_size=1, shuffle=False)
     with torch.inference_mode():
+        
+
         for data_batch in tqdm(dataloader):
             torch.cuda.ipc_collect()
             torch.cuda.empty_cache()
@@ -182,13 +194,62 @@ if dataset in ['SID', 'SMID', 'SDSD_indoor', 'SDSD_outdoor']:
             restored = torch.clamp(restored, 0, 1).cpu(
             ).detach().permute(0, 2, 3, 1).squeeze(0).numpy()
 
+
             if args.GT_mean:
                 # This test setting is the same as KinD, LLFlow, and recent diffusion models
                 # Please refer to Line 73 (https://github.com/zhangyhuaee/KinD/blob/master/evaluate_LOLdataset.py)
                 mean_restored = cv2.cvtColor(restored.astype(np.float32), cv2.COLOR_BGR2GRAY).mean()
                 mean_target = cv2.cvtColor(target.astype(np.float32), cv2.COLOR_BGR2GRAY).mean()
                 restored = np.clip(restored * (mean_target / mean_restored), 0, 1)
+            # Convert the restored image to uint8 (YOLO expects uint8 images)###############
+            restored_uint8 = (restored * 255).astype(np.uint8)
 
+            # Run YOLO on the enhanced image
+            results_yolo = model_yolo.predict(restored_uint8)
+            # Make a copy of the image to draw annotations on#############################################################################
+            annotated_img = restored_uint8.copy()
+
+            for res in results_yolo:
+                boxes = res.boxes.xyxy.cpu().numpy()      # Bounding box coordinates (x1, y1, x2, y2)
+                confidences = res.boxes.conf.cpu().numpy()  # Confidence scores
+                classes = res.boxes.cls.cpu().numpy()       # Class indices
+
+                for box, conf, cls in zip(boxes, confidences, classes):
+                    # Convert coordinates to integers
+                    x1, y1, x2, y2 = map(int, box)
+                    
+                    # Draw the bounding box
+                    cv2.rectangle(annotated_img, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                    
+                    # Create a label with class and confidence
+                    label = f"ID {int(cls)}: {conf:.2f}"
+                    
+                    # Put the label above the bounding box
+                    cv2.putText(annotated_img, label, (x1, y1 - 10), 
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+            
+            # Create an output path for the annotated image.
+            annotated_output_path = os.path.join(
+                result_dir,
+                type_id,
+                os.path.splitext(os.path.split(inp_path)[-1])[0] + '_annotated.png'
+            )
+            # Ensure the directory exists.
+            os.makedirs(os.path.join(result_dir, type_id), exist_ok=True)
+            # Save the annotated image.
+            utils.save_img(annotated_output_path, annotated_img)
+###################################################################################################
+            # Append the YOLO results to a file
+            with open("yolo_results.txt", "a") as f:
+                f.write(f"Image: {inp_path}\n")
+                for res in results_yolo:
+                    boxes = res.boxes.xyxy.cpu().numpy()      # Bounding box coordinates
+                    confidences = res.boxes.conf.cpu().numpy()  # Confidence scores
+                    classes = res.boxes.cls.cpu().numpy()       # Class indices
+                    for box, conf, cls in zip(boxes, confidences, classes):
+                        f.write(f"Box: {box.tolist()}, Confidence: {conf:.4f}, Class: {cls}\n")
+                f.write("\n")
+###########################################################################
             psnr.append(utils.PSNR(target, restored))
             ssim.append(utils.calculate_ssim(
                 img_as_ubyte(target), img_as_ubyte(restored)))
@@ -260,13 +321,80 @@ else:
             restored = torch.clamp(restored, 0, 1).cpu(
             ).detach().permute(0, 2, 3, 1).squeeze(0).numpy()
 
+
             if args.GT_mean:
                 # This test setting is the same as KinD, LLFlow, and recent diffusion models
                 # Please refer to Line 73 (https://github.com/zhangyhuaee/KinD/blob/master/evaluate_LOLdataset.py)
                 mean_restored = cv2.cvtColor(restored.astype(np.float32), cv2.COLOR_BGR2GRAY).mean()
                 mean_target = cv2.cvtColor(target.astype(np.float32), cv2.COLOR_BGR2GRAY).mean()
                 restored = np.clip(restored * (mean_target / mean_restored), 0, 1)
+            ####################################################### Convert the restored image to uint8
+            restored_uint8 = (restored * 255).astype(np.uint8)
 
+            # Run YOLO on the enhanced image
+            results_yolo = model_yolo.predict(restored_uint8)
+            # Make a copy of the image to draw annotations on#################################################
+            annotated_img = restored_uint8.copy()
+
+            for res in results_yolo:
+                boxes = res.boxes.xyxy.cpu().numpy()      # Bounding box coordinates (x1, y1, x2, y2)
+                confidences = res.boxes.conf.cpu().numpy()  # Confidence scores
+                classes = res.boxes.cls.cpu().numpy()       # Class indices
+
+                for box, conf, cls in zip(boxes, confidences, classes):
+                    # Convert coordinates to integers
+                    x1, y1, x2, y2 = map(int, box)
+                    
+                    # Draw the bounding box
+                    cv2.rectangle(annotated_img, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                    
+                    # Create a label with class and confidence
+                    label = f"ID {int(cls)}: {conf:.2f}"
+                    
+                    # Put the label above the bounding box
+                    cv2.putText(annotated_img, label, (x1, y1 - 10), 
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+            
+            
+                type_id = os.path.dirname(inp_path).split('/')[-1]
+
+                output_folder = os.path.join(result_dir, type_id)
+                os.makedirs(os.path.join(result_dir, type_id), exist_ok=True)
+                # Ensure the filename has a valid image extension
+                annotated_output_path = os.path.join(
+                    output_folder,
+                    os.path.splitext(os.path.basename(inp_path))[0] + '_annotated.png'
+                )
+                
+                # 🔥 Ensure the file has a valid extension
+                if not annotated_output_path.lower().endswith(('.png', '.jpg', '.jpeg')):
+                    annotated_output_path += '.png'  # Default to PNG
+
+                # Debugging: Print file path before saving
+                print(f"Saving annotated image to: {annotated_output_path}")
+
+                # # Then save your annotated image
+                # annotated_output_path = os.path.join(
+                #     result_dir, 
+                #     type_id, 
+                #     os.path.splitext(os.path.basename(inp_path))[0] ##+ '_annotated.png'
+                # )
+                utils.save_img(annotated_output_path, annotated_img)
+        #################################################################################################
+            # Append the YOLO results to a file
+            with open("yolo_results.txt", "a") as f:
+                f.write(f"Image: {inp_path}\n")  # Ensure inp_path is available in this branch (or use an appropriate identifier)
+                for res in results_yolo:
+                    boxes = res.boxes.xyxy.cpu().numpy()
+                    confidences = res.boxes.conf.cpu().numpy()
+                    classes = res.boxes.cls.cpu().numpy()
+                    for box, conf, cls in zip(boxes, confidences, classes):
+                        f.write(f"Box: {box.tolist()}, Confidence: {conf:.4f}, Class: {cls}\n")
+                f.write("\n")
+            
+
+######################################
+            
             psnr.append(utils.PSNR(target, restored))
             ssim.append(utils.calculate_ssim(
                 img_as_ubyte(target), img_as_ubyte(restored)))
@@ -276,8 +404,11 @@ else:
             else:
                 utils.save_img((os.path.join(result_dir, os.path.splitext(
                     os.path.split(inp_path)[-1])[0] + '.png')), img_as_ubyte(restored))
+                
+
 
 psnr = np.mean(np.array(psnr))
 ssim = np.mean(np.array(ssim))
 print("PSNR: %f " % (psnr))
 print("SSIM: %f " % (ssim))
+
