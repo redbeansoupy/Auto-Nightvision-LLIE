@@ -133,7 +133,7 @@ def get_data(path):
     gpu = []
     time = []
     num_lines = 0
-    start = min(num_lines - (60*30), 0)
+
     with open(path, "r") as f:
         lines = f.readlines()
         num_lines = len(lines)

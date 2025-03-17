@@ -38,8 +38,11 @@ gpu_avg = 0
 for file_idx in range(1, len(sys.argv), 1):
     with open(sys.argv[file_idx], "r") as file:
         lines = file.readlines()
-        num_lines = len(lines)
-        for idx in range(num_lines):
+
+        max_lines = 60 * 20 # Basically, just record last 2 minutes (steady state)
+        start = max(len(lines) - max_lines, 0)
+        num_lines = len(lines) - start
+        for idx in range(start, len(lines)):
             line = lines[idx]
             line = line.split(" ")
             ram_idx = line.index("RAM") + 1
@@ -88,13 +91,13 @@ for file_idx in range(1, len(sys.argv), 1):
             print(", ", end="")
     print(f"Average GPU usage: {gpu_avg:.2f}%")
 
-print("========== PRETEST SUBTRACTED =========")
-print(f"Average RAM usage: {(ram_avg - ram_pretest):.2f}/{ram_max}")
-print(f"Average CPU usage: [", end="")
-for core in range(CPU_CORES):
-    print(f"{(cpu_avg[core] - cpu_pretest[core]):.2f}%", end="")
-    if core == CPU_CORES - 1: # If last
-        print("]")
-    else:
-        print(", ", end="")
-print(f"Average GPU usage: {(gpu_avg - gpu_pretest):.2f}%")
+# print("========== PRETEST SUBTRACTED =========")
+# print(f"Average RAM usage: {(ram_avg - ram_pretest):.2f}/{ram_max}")
+# print(f"Average CPU usage: [", end="")
+# for core in range(CPU_CORES):
+#     print(f"{(cpu_avg[core] - cpu_pretest[core]):.2f}%", end="")
+#     if core == CPU_CORES - 1: # If last
+#         print("]")
+#     else:
+#         print(", ", end="")
+# print(f"Average GPU usage: {(gpu_avg - gpu_pretest):.2f}%")
