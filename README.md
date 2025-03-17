@@ -1,4 +1,4 @@
-# Auto Nightvision LLIE
+# JetinexFormer: Low Light Image Enhancement via Edge AI
 
 The way that we were able to successfully run Retinexformer involved reflashing the Jetson with a prebuilt image with Ubuntu 20.04 installed. Please consider backing up your files or manually upgrade to Ubuntu 20.04, but this was only tested using the prebuilt image. This also **does not use conda**. 
 
