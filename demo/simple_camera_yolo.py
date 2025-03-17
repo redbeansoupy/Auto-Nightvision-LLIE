@@ -55,13 +55,13 @@ def detect_blue(frame):
     # Set range for blue color and define mask 
     blue_lower = np.array([94, 80, 2], np.uint8) 
     blue_upper = np.array([120, 255, 255], np.uint8) 
-    blue_mask = cv2.inRange(hsvFrame, blue_lower, blue_upper) 
+    blue_mask = cv2.inRange(blurred_frame, blue_lower, blue_upper) 
 
     kernel = np.ones((3, 3), "uint8") #dilation kernel
 
     blue_mask = cv2.dilate(blue_mask, kernel) 
 
-    contours, hierarchy = cv2.findContours(blue_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) 
+    contours, _ = cv2.findContours(blue_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) 
 
     return contours
     
