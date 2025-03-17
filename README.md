@@ -2,6 +2,8 @@
 
 The way that we were able to successfully run Retinexformer involved reflashing the Jetson with a prebuilt image with Ubuntu 20.04 installed. Please consider backing up your files or manually upgrade to Ubuntu 20.04, but this was only tested using the prebuilt image. This also **does not use conda**. 
 
+It is **not** recommended to use the requirements.txt file to install dependencies because OpenCV has a very specific installation process. It is provided for reference only.
+
 Last tested February 11th, 2025
 
 ## Quickstart
